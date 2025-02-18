@@ -16,10 +16,6 @@ public class ModBlocks {
     // ブロックの登録用DeferredRegister
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Eclipse.MOD_ID);
 
-    // ブロックの登録例
-    public static final RegistryObject<Block> LUNAR_BLOCK = BLOCKS.register("lunar_block", 
-        () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0f, 6.0f)));
-
     // 独自ブロックの登録例：Lunar Block
     public static final RegistryObject<Block> LUNAR_BLOCK = BLOCKS.register("lunar_block", 
         () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.0f, 6.0f)) {
