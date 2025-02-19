@@ -1,0 +1,11 @@
+{
+  "magic_cast": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "procrafter:magic_cast",
+        "stream": false
+      }
+    ]
+  }
+}

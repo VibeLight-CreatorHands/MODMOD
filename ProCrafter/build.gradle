@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.neoforged.gradle' version '5.0.+' // NeoForgeのGradleプラグイン
+}
+
+group = 'com.yuyuto.procrafter' // あなたのパッケージ名
+version = '1.0.0' // バージョン番号
+archivesBaseName = 'ProCrafter' // ビルド成果物の名前
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17) // Minecraft 1.20.1ではJava 17が必須
+    }
+}
+
+minecraft {
+    version = '1.20.1' // Minecraftのバージョン
+    mappings = 'official' // オフィシャルマッピングを使用
+    runs {
+        client {
+            workingDirectory = file('run/client')
+            args '--username', 'Player'
+        }
+        server {
+            workingDirectory = file('run/server')
+        }
+    }
+}
+
+repositories {
+    maven {
+        name = 'NeoForge'
+        url = 'https://maven.neoforged.net/releases'
+    }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    minecraft 'net.neoforged:neoforge:1.20.1-47.1.106' // NeoForgeの依存関係
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release.set(17) // Java 17をターゲットに設定
+}
+
+tasks.jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveClassifier.set('')
+}
+
+tasks.register('publishToMavenLocal') {
+    dependsOn('build')
+    doLast {
+        println 'Build complete. Artifact available in Maven Local.'
+    }
+}
