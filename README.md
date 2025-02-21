@@ -12,3 +12,7 @@
 ここでは開発が行われたMODを見ていく。
 ## Eclipse
 太陽と月を象徴とした簡単なMOD。
+## GalaxyAll
+宇宙MODに魔法要素をドッキング。
+## Procrafter
+マイクラ史上最大規模のMODとして開発中。
