@@ -1,14 +1,14 @@
 # ProCrafter-1.20.1Neo
 ProCrafter-1.20.1 NEoForge Version for Yuyuto.
 
-# 欠損物
+# 欠損リソース(一部)
 - assets/procrafter/textures/gui/skill_tree.png
 - assest/procrafter/textures/gui/magic_machine_gui.png
 - assets/procrafter/textures/gui/skill_attack.png（16x16 の攻撃特化型スキルのスキルアイコン）
 - assets/procrafter/textures/gui/skill_defence.png（防衛・守備強化型スキルのスキルアイコン）
 - assets/procrafter/textures/gui/skill_jump.png（16x16 ピクセルの PNG 画像）
 
-
+他にも多数あり、とんでもないことになっています。
 Source installation information for modders
 -------------------------------------------
 This code follows the Minecraft Forge installation methodology. It will apply
