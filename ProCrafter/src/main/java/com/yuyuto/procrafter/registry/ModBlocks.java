@@ -100,5 +100,13 @@ public class ModBlocks {
     public static final RegistryObject<Item> COOLING_UNIT_ITEM = ITEMS.register("cooling_unit",
             () -> new BlockItem(COOLING_UNIT.get(), new Item.Properties()));
 
-    public static void register() {}
+    public static void register(IEventBus eventBus) {
+    // ブロック登録
+    BLOCKS.register(eventBus);
+    // アイテム登録
+    ITEMS.register(eventBus);
+    // ブロックエンティティ登録
+    BLOCK_ENTITIES.register(eventBus);
+    }
+
 }
